@@ -1,0 +1,145 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Outfit';
+  font-size: 18px;
+  font-weight: 300;
+  padding: 60px 24px;
+  background-color: var(--main-bg);
+  color: var(--white);
+}
+
+.preview-card {
+  background-color: var(--card-bg);
+  padding: 24px;
+  border-radius: 6px;
+}
+
+.main-img {
+  border-radius: 6px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-wrapper {
+  position: relative;
+  margin: 0 auto 30px;
+}
+
+.img-wrapper:hover .main-overlay-wrapper {
+  display: grid;
+}
+
+.main-overlay-wrapper {
+  display: none;
+  position: absolute;
+  place-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--soft-blue);
+  opacity: 0.5;
+  z-index: 1;
+  border-radius: 6px;
+}
+
+.overlay-icon {
+  z-index: 2;
+}
+
+.preview-card h1 {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.preview-card .description {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--soft-blue);
+  font-size: 14px;
+}
+
+.value-and-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.value,
+.time {
+  display: flex;
+  align-items: center;
+}
+
+.value-and-time img {
+  margin-right: 10px;
+}
+
+.value span {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.time span {
+  color: var(--soft-blue);
+}
+
+.author-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.author-wrapper img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  margin-right: 16px;
+}
+
+.author-wrapper p {
+  color: var(--soft-blue);
+  font-size: 14px;
+}
+
+.author-wrapper p a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 351px) {
+  html {
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .preview-card {
+    max-width: 350px;
+  }
+}
